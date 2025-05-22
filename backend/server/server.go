@@ -27,7 +27,6 @@ func handler(conn *websocket.Conn) {
 }
 
 func main() {
-	// app.get("/", callback)
 	http.Handle("GET /", websocket.Handler(handler))
 
 	log.Println("Sever started on port 3000")
