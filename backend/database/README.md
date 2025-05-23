@@ -32,7 +32,13 @@ podman logs <container name>
 podman [start/stop] <container name>
 ```
 
-## Connecting using Mongo Shell (mongosh)
+## Connecting to the container (mongosh) and running migrations
 ```sh
-podman exec -it mongosh "mongodb://<username>:<password>@localhost:27017"
+podman exec -it <container name> mongosh "mongodb://<username>:<password>@localhost:27017"
+# When connected to container
+load("/migrations/migrate.js")
 ```
+
+# TODO:
+- [ ] Fix the debug migrations so that they migrate up all versions and migrate down all versions on switch
+- [ ] Add a dry run option as well
