@@ -9,8 +9,8 @@
 Execute the following command inside the current directory
 ```sh
 podman build \
-username=<admin username> \
-password=<admin password> \
+--build-arg username=<admin username> \
+--build-arg password=<admin password> \
 -t <image tag> .
 ```
 
@@ -34,5 +34,5 @@ podman [start/stop] <container name>
 
 ## Connecting using Mongo Shell (mongosh)
 ```sh
-mongosh "mongodb://<username>:<password>@localhost:<port>/chat"
+podman exec -it mongosh "mongodb://<username>:<password>@localhost:27017"
 ```
