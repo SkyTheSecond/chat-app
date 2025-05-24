@@ -1,5 +1,3 @@
-const db = db.getSiblingDB("chat");
-
 // User generation
 const generatedUsers = [];
 
@@ -16,7 +14,7 @@ for (let i = 1; i <= 10; i++) {
     })
 }
 
-db.users.insertMany(generatedUsers);
+console.log(generatedUsers);
 
 // Room generation
 const generatedRooms = []
@@ -34,11 +32,10 @@ for (let i = 1; i <= 3; i++) {
 
     generatedRooms.push({
         _id: room,
-        owner_id: users[0],
         users
     })
 }
-db.rooms.insertMany(generatedRooms);
+console.log(generatedRooms);
 
 // Message generation
 const generatedMessages = [];
@@ -57,4 +54,4 @@ generatedRooms.forEach(room => {
     });
 });
 
-db.messages.insertMany(generatedMessages);
+console.log(generatedMessages);

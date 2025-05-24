@@ -12,8 +12,8 @@ if (isNaN(version)) {
 
 db.createUser(
     {
-        user: "ws_server",
-        pwd: "server_password",
+        user: username,
+        pwd: password,
         roles: [
             { role: "readWrite", db: "chat" }
         ]
