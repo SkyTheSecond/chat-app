@@ -1,7 +1,7 @@
 package model
 
 type Room struct {
-	id      string `bson:"_id"`
-	ownerID string `bson:"owner_id"`
-	users   User   `bson:"users"`
+	ID      string `bson:"_id"`
+	OwnerID string `bson:"owner_id"`
+	Users   User   `bson:"users"`
 }
